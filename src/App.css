@@ -1,0 +1,113 @@
+/* --- 全体レイアウトの初期化 --- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- Main Container (グリッドレイアウト) --- */
+.container {
+  width: 100%;
+  max-width: 935px;
+  margin: 40px auto; /* 画面上部からの余白 */
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* --- Search Area --- */
+.search-container {
+  grid-column: 1 / -1; /* グリッドの全列を使用して上部に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 20px;
+  width: 100%;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+/* テキストボックスのスタイル */
+.search-container input[type="text"] {
+  width: 100%;
+  max-width: 280px;
+  height: 36px;
+  padding: 0 12px; /* コメントアウトを解除して入力しやすくしました */
+  background-color: #efefef;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.search-container input[type="text"]:focus {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+}
+
+/* 検索ボタンのスタイル */
+.search-button {
+  height: 36px;
+  padding: 0 16px;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  background-color: #555555;
+}
+
+.search-button:active {
+  transform: scale(0.96);
+  background-color: #1a1a1a;
+}
+
+/* --- Movie Card Item (映画カード) --- */
+/* MovieCardコンポーネントのルート要素を想定 */
+.container > div:not(.search-container) {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #efefef;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.container > div:not(.search-container) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.container > div:not(.search-container):hover img {
+  opacity: 0.8;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 735px) {
+  .container {
+    gap: 3px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .search-container {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,57 @@
+/* :root {
+  --ig-bg-color: #fafafa;
+  --ig-card-bg: #ffffff;
+  --ig-text-primary: #262626;
+  --ig-text-secondary: #8e8e8e;
+  --ig-link: #0095f6;
+  --ig-border: #dbdbdb;
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--ig-bg-color);
+  font-family: var(--font-stack);
+  color: var(--ig-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* スマホでのタップハイライトを消す */
+
+:root {
+  --ig-bg-color: #fafafa; /* インスタ背景色 */
+  --ig-card-bg: #ffffff;
+  --ig-text-primary: #262626;
+  --ig-text-secondary: #8e8e8e;
+  --ig-link: #0095f6;
+  --ig-border: #dbdbdb;
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--ig-bg-color);
+  font-family: var(--font-stack);
+  color: var(--ig-text-primary);
+  /* PC用スクロールバー調整 */
+  overflow-y: scroll; 
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* コンテンツ全体を中央揃えにするためのWrapper設定 */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
