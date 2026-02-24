@@ -55,7 +55,7 @@ type Movie = {
   score: number;
   genres: string[];  
 };
-
+// ここをモーダルにしたい
 function MovieDetail(){
     const [movie , setMovie] = useState<Movie | null>(null);
     const {movieId} = useParams();
